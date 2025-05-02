@@ -31,7 +31,10 @@ function draw() {
       let col = capture.get(x, y); // 從 capture 的相對位置取得顏色
       graphics.fill(col);
       graphics.noStroke();
-      graphics.ellipse(x + 10, y + 10, 15, 15); // 繪製寬高為15的圓
+      graphics.rect(x + 1, y + 1, 18, 18); // 繪製寬為18的方框
+
+      graphics.fill('#ffe5d9'); // 設定圓的顏色為 #ffe5d9
+      graphics.ellipse(x + 10, y + 10, 5, 5); // 在方框中間繪製直徑為5的圓
     }
   }
 
