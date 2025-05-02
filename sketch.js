@@ -11,8 +11,14 @@ function setup() {
 }
 
 function draw() {
-  background('#d8e2dc'); // 確保背景顏色持續更新
-  image(capture, width * 0.1, height * 0.1, width * 0.8, height * 0.8); // 將影像顯示在畫布中央
+  background('#cdb4db'); // 確保背景顏色持續更新
+
+  // 翻轉畫布以修正左右顛倒
+  push();
+  translate(width, 0); // 將畫布原點移到右上角
+  scale(-1, 1); // 水平翻轉畫布
+  image(capture, width * 0.1, height * 0.1, width * 0.8, height * 0.8); // 繪製影像
+  pop();
 }
 
 function windowResized() {
