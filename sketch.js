@@ -12,7 +12,6 @@ function setup() {
 
   // 建立與視訊畫面相同大小的圖形
   graphics = createGraphics(windowWidth * 0.8, windowHeight * 0.8);
-  graphics.background(255, 0, 0, 100); // 設定圖形背景為半透明紅色
 }
 
 function draw() {
@@ -25,7 +24,18 @@ function draw() {
   image(capture, width * 0.1, height * 0.1, width * 0.8, height * 0.8); // 繪製影像
   pop();
 
-  // 繪製圖形在視訊上方
+  // 更新 graphics 的內容
+  graphics.background(0); // 設定背景為黑色
+  for (let x = 0; x < graphics.width; x += 20) {
+    for (let y = 0; y < graphics.height; y += 20) {
+      let col = capture.get(x, y); // 從 capture 的相對位置取得顏色
+      graphics.fill(col);
+      graphics.noStroke();
+      graphics.ellipse(x + 10, y + 10, 15, 15); // 繪製寬高為15的圓
+    }
+  }
+
+  // 繪製 graphics 在視訊上方
   image(graphics, width * 0.1, height * 0.1, width * 0.8, height * 0.8);
 }
 
