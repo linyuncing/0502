@@ -3,7 +3,7 @@ let graphics;
 
 function setup() {
   createCanvas(windowWidth, windowHeight); // 全螢幕畫布
-  background('#d8e2dc'); // 設定背景顏色
+  background('#cdb4db'); // 設定背景顏色
 
   // 初始化攝影機影像
   capture = createCapture(VIDEO);
@@ -15,9 +15,9 @@ function setup() {
 }
 
 function draw() {
-  background('#d8e2dc'); // 確保背景顏色持續更新
+  background('#cdb4db'); // 確保背景顏色持續更新
 
-  // 翻轉畫布以修正左右顛倒
+  // 翻轉畫布以修正攝影機影像左右顛倒
   push();
   translate(width, 0); // 將畫布原點移到右上角
   scale(-1, 1); // 水平翻轉畫布
@@ -35,8 +35,12 @@ function draw() {
     }
   }
 
-  // 繪製 graphics 在視訊上方
-  image(graphics, width * 0.1, height * 0.1, width * 0.8, height * 0.8);
+  // 翻轉畫布以修正 graphics 顯示左右顛倒
+  push();
+  translate(width, 0); // 將畫布原點移到右上角
+  scale(-1, 1); // 水平翻轉畫布
+  image(graphics, width * 0.1, height * 0.1, width * 0.8, height * 0.8); // 繪製 graphics
+  pop();
 }
 
 function windowResized() {
