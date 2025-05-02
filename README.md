@@ -328,11 +328,3 @@ function windowResized() {
 }
 
 ```
-## 第七條指令
-```tex
-
-```
-### 程式碼
-```javascript=
-
-```
