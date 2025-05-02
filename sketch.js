@@ -3,7 +3,7 @@ let graphics;
 
 function setup() {
   createCanvas(windowWidth, windowHeight); // 全螢幕畫布
-  background('#cdb4db'); // 設定背景顏色
+  background('#d8e2dc'); // 設定背景顏色
 
   // 初始化攝影機影像
   capture = createCapture(VIDEO);
@@ -15,7 +15,7 @@ function setup() {
 }
 
 function draw() {
-  background('#cdb4db'); // 確保背景顏色持續更新
+  background('#d8e2dc'); // 確保背景顏色持續更新
 
   // 翻轉畫布以修正攝影機影像左右顛倒
   push();
