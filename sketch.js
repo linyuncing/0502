@@ -25,7 +25,7 @@ function draw() {
   pop();
 
   // 更新 graphics 的內容
-  graphics.background(0); // 設定背景為黑色
+  graphics.background('#9d8189'); // 設定背景為 #9d8189
   for (let x = 0; x < graphics.width; x += 20) {
     for (let y = 0; y < graphics.height; y += 20) {
       let col = capture.get(x, y); // 從 capture 的相對位置取得顏色
